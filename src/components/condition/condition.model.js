@@ -11,7 +11,7 @@ const ConditionSchema = new mongoose.Schema(
 		conditionType: {
 			type: String,
 			enum: [ 'Brand New', 'Fairly used - Nigeria', 'Fairly used - Foreign', 'Poorly used' ],
-			default : 'Brand New'
+			default: 'Brand New'
 		},
 		status: {
 			type: String,
