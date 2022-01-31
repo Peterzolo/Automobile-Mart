@@ -14,7 +14,6 @@ exports.postCreateVehicleModel = async (req, res) => {
 		throw vehicleModelError.InvalidInput(errors.mapped());
 	}
 
-	
 	const vehicleModelData = req.body;
 	const savedVehicleModel = await vehicleModelService.createVehicleModel(vehicleModelData);
 

@@ -18,9 +18,10 @@ const vehicleModelRoutes = require('./vehicleModel/vehicleModel.routes');
 const vehicleModelModel = require('./vehicleModel/vehicleModel.model');
 const vehicleModelService = require('./vehicleModel/vehicleModel.services');   
 
-// const requestRoutes = require('./request/request.routes');
-// const requestModel = require('./request/request.model');
-// const requestService = require('./request/request.services');
+
+const conditionRoutes = require('./condition/condition.routes');
+const conditionModel = require('./condition/condition.model');
+const conditionService = require('./condition/condition.services');
 
 // const chatRoutes = require('./chat/chat.routes');
 // const chatModel = require('./chat/chat.model');
@@ -55,12 +56,12 @@ const componentModule = {
 		routes: vehicleModelRoutes,
 		model: vehicleModelModel,
 		service: vehicleModelService
-	}
-	// requestModule: {
-	// 	routes: requestRoutes,
-	// 	model: requestModel,
-	// 	service: requestService
-	// },
+	},
+	conditionModule: {
+		routes: conditionRoutes,
+		model: conditionModel,
+		service: conditionService
+	},
 	// chatModule: {
 	// 	routes: chatRoutes,
 	// 	model: chatModel,

@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 // const dotenv = require('dotenv');
 const handler = require('./library/helpers/errorHandlers');
 const config = require('./config');
-const { userModule, vehicleModule, brandModule, vehicleNameModule, vehicleModelModule } = require('./components');
+const { userModule, vehicleModule, brandModule, vehicleNameModule, vehicleModelModule, conditionModule } = require('./components');
 
 const app = express();
 
@@ -34,7 +34,7 @@ app.use(`/api/vehicle`, vehicleModule.routes);
 app.use(`/api/brand`, brandModule.routes);
 app.use(`/api/vehicle-name`, vehicleNameModule.routes);
 app.use(`/api/vehicle-model`, vehicleModelModule.routes);
-// app.use(`/api/payment`, paymentModule.routes);
+app.use(`/api/condition`, conditionModule.routes);
 // app.use(`/api/request`, requestModule.routes);
 // app.use(`/api/chat`, chatModule.routes);
 // app.use(`/api/message`, messageModule.routes);

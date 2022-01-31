@@ -12,13 +12,14 @@ const ModelSchema = new mongoose.Schema(
 		},
 
 		manufactureYear: {
-			type: Number,
+			type: Date,
 			required: true
 		},
 
-		active: {
-			type: Boolean,
-			default: true
+		status: {
+			type: String,
+			enum: [ 'active', 'inactive' ],
+			default: 'active'
 		}
 	},
 	{ timestamps: true }
