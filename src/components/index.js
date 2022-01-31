@@ -8,9 +8,9 @@ const vehicleRoutes = require('./vehicle/vehicle.routes');
 const vehicleModel = require('./vehicle/vehicle.model');
 const vehicleService = require('./vehicle/vehicle.services');
 
-// const propertyRoutes = require('./property/property.routes');
-// const propertyModel = require('./property/property.model');
-// const propertyService = require('./property/property.services');
+const brandRoutes = require('./brand/brand.routes');
+const brandModel = require('./brand/brand.model');
+const brandService = require('./brand/brand.services');
 
 // const flatRoutes = require('./flat/flat.routes');
 // const flatModel = require('./flat/flat.model');
@@ -47,11 +47,11 @@ const componentModule = {
 		model: vehicleModel,
 		service: vehicleService
 	},
-	// propertyModule: {
-	// 	routes: propertyRoutes,
-	// 	model: propertyModel,
-	// 	service: propertyService
-	// },
+	brandModule: {
+		routes: brandRoutes,
+		model: brandModel,
+		service: brandService
+	},
 	// flatModule: {
 	// 	routes: flatRoutes,
 	// 	model: flatModel,

@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const handler = require('./library/helpers/errorHandlers');
 const config = require('./config');
 const {
-	userModule, vehicleModule,
+	userModule, vehicleModule, brandModule,
 	
 } = require('./components');
 
@@ -34,7 +34,7 @@ app.set('trust proxy', 1);
 
 app.use(`/api/users`, userModule.routes);
 app.use(`/api/vehicle`, vehicleModule.routes);
-// app.use(`/api/property`, propertyModule.routes);
+app.use(`/api/brand`, brandModule.routes);
 // app.use(`/api/flat`, flatModule.routes);
 // app.use(`/api/flat-type`, flatTypeModule.routes);
 // app.use(`/api/payment`, paymentModule.routes);

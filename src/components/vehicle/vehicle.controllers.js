@@ -38,6 +38,9 @@ exports.getAllVehicles = async (req, res) => {
 	}
 
 	const vehicles = await vehicleService.fetchAllVehicles(page, size);
+	if (!vehicles.length) {
+		throw vehicleError.NotFound();
+	}
 
 	return res.status(200).send(
 		sendResponse({
