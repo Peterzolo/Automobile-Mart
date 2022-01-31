@@ -23,9 +23,10 @@ const conditionRoutes = require('./condition/condition.routes');
 const conditionModel = require('./condition/condition.model');
 const conditionService = require('./condition/condition.services');
 
-// const chatRoutes = require('./chat/chat.routes');
-// const chatModel = require('./chat/chat.model');
-// const chatService = require('./chat/chat.services');
+
+const imageRoutes = require('./image/image.routes');
+const imageModel = require('./image/image.model');
+const imageService = require('./image/image.services');
 
 // const messageRoutes = require('./message/message.routes');
 // const messageModel = require('./message/message.model');
@@ -62,11 +63,11 @@ const componentModule = {
 		model: conditionModel,
 		service: conditionService
 	},
-	// chatModule: {
-	// 	routes: chatRoutes,
-	// 	model: chatModel,
-	// 	service: chatService
-	// },
+	imageModule: {
+		routes: imageRoutes,
+		model: imageModel,
+		service: imageService
+	}
 
 	// messageModule: {
 	// 	routes: messageRoutes,
