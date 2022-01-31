@@ -1,5 +1,3 @@
-
-
 const userRoutes = require('./users/user.routes');
 const userModel = require('./users/user.model');
 const userService = require('./users/user.service');
@@ -12,18 +10,13 @@ const brandRoutes = require('./brand/brand.routes');
 const brandModel = require('./brand/brand.model');
 const brandService = require('./brand/brand.services');
 
-
 const vehicleNameRoutes = require('./vehicleName/vehicleName.routes');
 const vehicleNameModel = require('./vehicleName/vehicleName.model');
 const vehicleNameService = require('./vehicleName/vehicleName.services');
 
-// const vehicleNameTypeRoutes = require('./vehicleNameType/vehicleNameType.routes');
-// const vehicleNameTypeModel = require('./vehicleNameType/vehicleNameType.model');
-// const vehicleNameTypeService = require('./vehicleNameType/vehicleNameType.services');
-
-// const paymentRoutes = require('./payment/payment.routes');
-// const paymentModel = require('./payment/payment.model');
-// const paymentService = require('./payment/payment.services');
+const vehicleModelRoutes = require('./vehicleModel/vehicleModel.routes');
+const vehicleModelModel = require('./vehicleModel/vehicleModel.model');
+const vehicleModelService = require('./vehicleModel/vehicleModel.services');   
 
 // const requestRoutes = require('./request/request.routes');
 // const requestModel = require('./request/request.model');
@@ -58,17 +51,11 @@ const componentModule = {
 		model: vehicleNameModel,
 		service: vehicleNameService
 	},
-	// vehicleNameTypeModule: {
-	// 	routes: vehicleNameTypeRoutes,
-	// 	model: vehicleNameTypeModel,
-	// 	service: vehicleNameTypeService
-	// },
-
-	// paymentModule: {
-	// 	routes: paymentRoutes,
-	// 	model: paymentModel,
-	// 	service: paymentService
-	// },
+	vehicleModelModule: {
+		routes: vehicleModelRoutes,
+		model: vehicleModelModel,
+		service: vehicleModelService
+	}
 	// requestModule: {
 	// 	routes: requestRoutes,
 	// 	model: requestModel,

@@ -4,7 +4,7 @@ const message = {
 	vehicleName: 'Vehicle name must be at least 2 characters long'
 };
 
-exports.validateVehicleName = () => {
+exports.validateVehicleModel = () => {
 	return [
 		check('vehicleName', message.vehicleName).isString().isLength({ min: 2 }).trim()
 		// check('address', message.address).isString().isLength({ min: 3 }).trim()

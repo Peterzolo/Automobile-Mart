@@ -26,7 +26,7 @@ const findAndPopulate = async (
 
 const saveVehicleNameWithPayload = async (payload = {}) => {
 	const vehicleName = new VehicleName(payload);
-	await v.save();
+	await vehicleName.save();
 
 	return vehicleName;
 };
@@ -69,8 +69,8 @@ const findVehicleName = async (query = {}, findMode = 'one', page, size) => {
 
 ///////////////////////////////////////////////////////////////
 
-exports.checkVehicleNameOwnership = async (VehicleNameId) => {
-	const vehicleName = await findVehicleName({ VehicleNameId });
+exports.checkVehicleNameOwnership = async (vehicleNameId) => {
+	const vehicleName = await findVehicleName({ vehicleNameId });
 
 	if (isEmpty(vehicleName)) {
 		return false;
@@ -85,7 +85,7 @@ exports.fetchAllVehicleNames = async () => {
 };
 
 const updateVehicleName = async (query, VehicleNameObj) => {
-	const updatedVehicleName = await VehicleName.updateOne(query, VehicleNameObj);
+	const updatedVehicleName = await VehicleName.updateOne(query, vehicleNameObj);
 	return updatedVehicleName;
 };
 

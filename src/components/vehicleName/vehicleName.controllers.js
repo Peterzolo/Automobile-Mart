@@ -39,6 +39,10 @@ exports.getAllVehicleNames = async (req, res) => {
 
 	const vehicleNames = await vehicleNameService.fetchAllVehicleNames(page, size);
 
+	if (!vehicleNames.length) {
+		throw vehicleNameError.NotFound();
+	}
+
 	return res.status(200).send(
 		sendResponse({
 			message: 'vehicleNames successfully loaded',

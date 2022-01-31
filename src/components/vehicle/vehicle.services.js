@@ -114,7 +114,7 @@ exports.deleteOneVehicle = async (id) => {
 };
 
 exports.fetchAVehicle = async (id) => {
-	let singleVehicle = await Vehicle.findById(id).populate('user vehicleName brand vehicleModel condition image state', '-password');
+	let singleVehicle = await Vehicle.findById(id).populate();
 
 	return singleVehicle;
 };
