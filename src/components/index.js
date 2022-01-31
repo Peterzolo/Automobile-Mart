@@ -4,9 +4,9 @@ const userRoutes = require('./users/user.routes');
 const userModel = require('./users/user.model');
 const userService = require('./users/user.service');
 
-// const tenantRoutes = require('./tenant/tenant.routes');
-// const tenantModel = require('./tenant/tenant.model');
-// const tenantService = require('./tenant/tenant.service');
+const vehicleRoutes = require('./vehicle/vehicle.routes');
+const vehicleModel = require('./vehicle/vehicle.model');
+const vehicleService = require('./vehicle/vehicle.services');
 
 // const propertyRoutes = require('./property/property.routes');
 // const propertyModel = require('./property/property.model');
@@ -41,13 +41,12 @@ const componentModule = {
 		routes: userRoutes,
 		model: userModel,
 		service: userService
-	}
-
-	// tenantModule: {
-	// 	routes: tenantRoutes,
-	// 	model: tenantModel,
-	// 	service: tenantService
-	// },
+	},
+	vehicleModule: {
+		routes: vehicleRoutes,
+		model: vehicleModel,
+		service: vehicleService
+	},
 	// propertyModule: {
 	// 	routes: propertyRoutes,
 	// 	model: propertyModel,

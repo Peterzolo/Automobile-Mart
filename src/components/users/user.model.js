@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const LandlordSchema = new Schema(
+const UserSchema = new Schema(
 	{
 		firstName: {
 			type: String,
@@ -28,14 +28,10 @@ const LandlordSchema = new Schema(
 			type: String,
 			trim: true
 		},
-		address: {
-			type: String,
-			required: true
-		},
-
 		avatar: {
 			type: String,
-			trim: true
+			trim: true,
+			default: 'https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/'
 		},
 		status: {
 			type: String,
@@ -56,7 +52,7 @@ const LandlordSchema = new Schema(
 	{ collection: 'users' }
 );
 
-LandlordSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function(next) {
 	try {
 		if (!this.isModified('password')) {
 			return next();
@@ -71,6 +67,6 @@ LandlordSchema.pre('save', async function(next) {
 	}
 });
 
-const Landlord = mongoose.model('landlord', LandlordSchema);
+const User = mongoose.model('user', UserSchema);
 
-module.exports = Landlord;
+module.exports = User;

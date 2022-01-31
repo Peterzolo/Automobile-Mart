@@ -22,7 +22,7 @@ exports.checkUserExist = async (query) => {
 };
 
 //Formatted items to be sent to the database
-exports.signUp = async ({ formattedFirstName, formattedLastName, email, address, password }) => {
+exports.signUp = async ({ formattedFirstName, formattedLastName, email, password }) => {
 	let avatar = await gravatar.url(email, {
 		s: '200', // Size
 		r: 'pg', // Rating
@@ -38,7 +38,6 @@ exports.signUp = async ({ formattedFirstName, formattedLastName, email, address,
 		firstName: formattedFirstName,
 		lastName: formattedLastName,
 		email,
-		address,
 		avatar: avatar,
 		status: 'active',
 		password
@@ -156,6 +155,7 @@ const findAndPopulate = async (
 	sortQuery = { _id: -1 }
 ) => {
 	const user = await User.find(query)
+		.select('-password')
 		.select(selectQuery)
 		.populate({
 			path: path,
@@ -189,7 +189,7 @@ exports.deleteUser = async (id) => {
 /////////////////////////////////////////////////////////////////////////////////
 
 exports.fetchAUser = async (id) => {
-	let singleUser = await Tenant.findById(id).populate('flat User', '-password').select('-password');
+	let singleUser = await User.findById(id).populate().select('-password');
 
 	return singleUser;
 };

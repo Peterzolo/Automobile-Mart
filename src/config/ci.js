@@ -8,7 +8,7 @@ if (!envFound) {
 module.exports = {
   appName: process.env.APP_NAME,
   port: parseInt(process.env.PORT, 10),
-  dbURI: "mongodb://127.0.0.1:27017/Property-management-app",
+  dbURI:  process.env.MONGO_DEV_URI,
   jwtSecret: process.env.JWT_SECRET,
   tokenType: process.env.JWT_TOKEN_TYPE,
   logs: {

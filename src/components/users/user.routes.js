@@ -10,11 +10,11 @@ userRouter.post('/register', validateSignUp(), catchErrors(userController.postSi
 
 userRouter.post('/login', validateLogin(), catchErrors(userController.postLogin));
 
-userRouter.get('/get-all', getAuthorize, catchErrors(userController.getAllUsers));
-userRouter.get('/fetch-one/:id', getAuthorize, catchErrors(userController.postGetAUser));
+userRouter.get('/get-all', catchErrors(userController.getAllUsers));
+userRouter.get('/get-one/:id', catchErrors(userController.postGetAUser));
 
 userRouter.put('/edit/:userId', validateEdit(), catchErrors(userController.postEditUser));
 
-userRouter.delete('/remove/:userId', getAuthorize, catchErrors(userController.deleteUser));
+userRouter.delete('/remove/:userId', catchErrors(userController.deleteUser));
 
 module.exports = userRouter;

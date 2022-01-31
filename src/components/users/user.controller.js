@@ -10,17 +10,14 @@ const logger = require('../../library/helpers/loggerHelpers');
 const { isEmpty } = require('../../library/helpers/validationHelpers');
 
 exports.postSignUp = async (req, res) => {
-	
 	const errors = validationResult(req);
 
 	if (!errors.isEmpty()) {
-		throw userError.InvalidInput(errors.mapped());   
+		throw userError.InvalidInput(errors.mapped());
 	}
 
-	
-	const { firstName, lastName, email, password, address, confirmPassword } = req.body;
+	const { firstName, lastName, email, password, confirmPassword } = req.body;
 
-	
 	let formattedFirstName = sentenceCase(`${firstName}`);
 	let formattedLastName = sentenceCaseNew(`${lastName}`);
 
@@ -38,8 +35,7 @@ exports.postSignUp = async (req, res) => {
 		formattedFirstName,
 		formattedLastName,
 		email,
-		password,
-		address
+		password
 	});
 
 	return res.status(200).send(
@@ -149,8 +145,6 @@ exports.deleteUser = async (req, res) => {
 		})
 	);
 };
-
-
 
 exports.postGetAUser = async (req, res) => {
 	try {
