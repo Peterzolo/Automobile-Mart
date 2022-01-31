@@ -77,9 +77,10 @@ const VehicleSchema = new mongoose.Schema(
 			ref: 'state',
 			required: true
 		},
-		active: {
-			type: Boolean,
-			default: true
+		status: {
+			type: String,
+			enum : ['active', 'inactive'],
+			default: 'active'
 		}
 	},
 	{ timestamps: true }

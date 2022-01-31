@@ -12,13 +12,14 @@ const brandRoutes = require('./brand/brand.routes');
 const brandModel = require('./brand/brand.model');
 const brandService = require('./brand/brand.services');
 
-// const flatRoutes = require('./flat/flat.routes');
-// const flatModel = require('./flat/flat.model');
-// const flatService = require('./flat/flat.services');
 
-// const flatTypeRoutes = require('./flatType/flatType.routes');
-// const flatTypeModel = require('./flatType/flatType.model');
-// const flatTypeService = require('./flatType/flatType.services');
+const vehicleNameRoutes = require('./vehicleName/vehicleName.routes');
+const vehicleNameModel = require('./vehicleName/vehicleName.model');
+const vehicleNameService = require('./vehicleName/vehicleName.services');
+
+// const vehicleNameTypeRoutes = require('./vehicleNameType/vehicleNameType.routes');
+// const vehicleNameTypeModel = require('./vehicleNameType/vehicleNameType.model');
+// const vehicleNameTypeService = require('./vehicleNameType/vehicleNameType.services');
 
 // const paymentRoutes = require('./payment/payment.routes');
 // const paymentModel = require('./payment/payment.model');
@@ -52,15 +53,15 @@ const componentModule = {
 		model: brandModel,
 		service: brandService
 	},
-	// flatModule: {
-	// 	routes: flatRoutes,
-	// 	model: flatModel,
-	// 	service: flatService
-	// },
-	// flatTypeModule: {
-	// 	routes: flatTypeRoutes,
-	// 	model: flatTypeModel,
-	// 	service: flatTypeService
+	vehicleNameModule: {
+		routes: vehicleNameRoutes,
+		model: vehicleNameModel,
+		service: vehicleNameService
+	},
+	// vehicleNameTypeModule: {
+	// 	routes: vehicleNameTypeRoutes,
+	// 	model: vehicleNameTypeModel,
+	// 	service: vehicleNameTypeService
 	// },
 
 	// paymentModule: {

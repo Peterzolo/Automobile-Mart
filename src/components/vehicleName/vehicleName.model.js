@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 Schema = mongoose.Schema;
 
-const BrandSchema = new mongoose.Schema(  
+const VehicleNamesSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -9,12 +9,12 @@ const BrandSchema = new mongoose.Schema(
 		},
 		status: {
 			type: String,
-			enum : ['active', 'inactive'],
+			enum: [ 'active', 'inactive' ],
 			default: 'active'
 		}
 	},
 	{ timestamps: true }
 );
 
-const Brand = mongoose.model('brand', BrandSchema);
-module.exports = Brand;
+const VehicleNames = mongoose.model('vehicleName', VehicleNamesSchema);
+module.exports = VehicleNames;
