@@ -28,9 +28,10 @@ const imageRoutes = require('./image/image.routes');
 const imageModel = require('./image/image.model');
 const imageService = require('./image/image.services');
 
-// const messageRoutes = require('./message/message.routes');
-// const messageModel = require('./message/message.model');
-// const messageService = require('./message/message.services');
+
+const locationRoutes = require('./location/location.routes');
+const locationModel = require('./location/location.model');
+const locationService = require('./location/location.services');
 
 const componentModule = {
 	userModule: {
@@ -67,13 +68,13 @@ const componentModule = {
 		routes: imageRoutes,
 		model: imageModel,
 		service: imageService
-	}
+	},
 
-	// messageModule: {
-	// 	routes: messageRoutes,
-	// 	model: messageModel,
-	// 	service: messageService
-	// }
+	locationModule: {
+		routes: locationRoutes,
+		model: locationModel,
+		service: locationService
+	}
 };
 
 module.exports = componentModule;

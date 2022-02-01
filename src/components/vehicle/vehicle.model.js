@@ -72,9 +72,14 @@ const VehicleSchema = new mongoose.Schema(
 			required: true
 		},
 
-		state: {
+		location: {
 			type: Schema.Types.ObjectId,
-			ref: 'state',
+			ref: 'location',
+			required: true
+		},
+		contact: {
+			type: Schema.Types.ObjectId,
+			ref: 'contact',
 			required: true
 		},
 		status: {

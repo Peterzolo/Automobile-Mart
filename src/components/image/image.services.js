@@ -33,7 +33,7 @@ const saveImageWithPayload = async (payload = {}) => {
 exports.createImage = async (payload) => {
 	const image = await saveImageWithPayload(payload);
 	const savedImage = await findAndPopulate(
-		{ _id: Image._id },
+		{ _id: image._id },
 		null
 		// "userId",
 		// "name email avatar"

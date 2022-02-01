@@ -6,7 +6,7 @@ const imageError = require('./image.error');
 const { sendResponse } = require('../../library/helpers/responseHelpers');
 const { isEmpty } = require('../../library/helpers/validationHelpers');
 
-exports.postCreateimage = async (req, res) => {
+exports.postCreateImage = async (req, res) => {
 	const errors = validationResult(req);
 
 	if (!errors.isEmpty()) {

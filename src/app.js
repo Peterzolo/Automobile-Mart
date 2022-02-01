@@ -14,7 +14,8 @@ const {
 	vehicleNameModule,
 	vehicleModelModule,
 	conditionModule,
-	imageModule
+	imageModule,
+	locationModule
 } = require('./components');
 
 const app = express();
@@ -44,7 +45,7 @@ app.use(`/api/vehicle-name`, vehicleNameModule.routes);
 app.use(`/api/vehicle-model`, vehicleModelModule.routes);
 app.use(`/api/condition`, conditionModule.routes);
 app.use(`/api/image`, imageModule.routes);
-// app.use(`/api/request`, requestModule.routes);
+app.use(`/api/location`, locationModule.routes);
 // app.use(`/api/message`, messageModule.routes);
 
 handler.handleErrors(app);
