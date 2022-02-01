@@ -9,10 +9,10 @@ const { getAuthorize } = require('../../library/middlewares/authMiddleware');
 const brandController = require('./brand.controllers');
 const { validateBrand } = require('./brand.validator');
 
-brandRouter.post('/create', validateBrand(), catchErrors(brandController.postCreateBrand));
+brandRouter.post('/create', getAuthorize, validateBrand(), catchErrors(brandController.postCreateBrand));
 brandRouter.get('/get-all', catchErrors(brandController.getAllBrands));
-brandRouter.put('/edit/:brandId', getAuthorize, catchErrors(brandController.postEditBrand));
-brandRouter.delete('/remove/:id', getAuthorize, catchErrors(brandController.postDeleteBrand));
-brandRouter.get('/get-one/:id', getAuthorize, catchErrors(brandController.postGetABrand));
+brandRouter.put('/edit/:brandId',getAuthorize,  catchErrors(brandController.postEditBrand));
+brandRouter.delete('/remove/:id', getAuthorize,  catchErrors(brandController.postDeleteBrand));
+brandRouter.get('/get-one/:id',  catchErrors(brandController.postGetABrand));
 
 module.exports = brandRouter;

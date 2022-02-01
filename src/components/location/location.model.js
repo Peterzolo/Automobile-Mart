@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 Schema = mongoose.Schema;
 
-const LocationSchema = new mongoose.Schema(  
+const LocationSchema = new mongoose.Schema(
 	{
 		area: {
 			type: String,
@@ -17,12 +17,12 @@ const LocationSchema = new mongoose.Schema(
 		},
 		status: {
 			type: String,
-			enum : ['active', 'inactive'],
+			enum: [ 'active', 'inactive' ],
 			default: 'active'
 		}
 	},
 	{ timestamps: true }
 );
 
-const Location = mongoose.model('Location', LocationSchema);
+const Location = mongoose.model('location', LocationSchema);
 module.exports = Location;

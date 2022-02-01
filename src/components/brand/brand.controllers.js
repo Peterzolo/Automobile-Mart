@@ -26,7 +26,7 @@ exports.postCreateBrand = async (req, res) => {
 	);
 };
 
-exports.getAllbrands = async (req, res) => {
+exports.getAllBrands = async (req, res) => {
 	let { page, size } = req.query;
 
 	if (!page) {

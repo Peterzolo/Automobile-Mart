@@ -5,7 +5,7 @@ const Vehicle = require('./vehicle.model');
 const findAndPopulate = async (
 	query = {},
 	selectQuery = {},
-	path = 'user vehicleName brand vehicleModel condition image state',
+	path = 'user vehicleName brand vehicleModel condition image location contact',
 	pathQuery = '-password',
 	findMode = 'one',
 	sortQuery = { _id: -1 }
@@ -81,7 +81,7 @@ exports.checkVehicleOwnership = async (userId) => {
 
 exports.fetchAllVehicles = async () => {
 	const vehicle = await Vehicle.find({ status: 'active' }).populate(
-		'user vehicleName brand vehicleModel condition image state',
+		'user vehicleName brand vehicleModel condition image location contact',
 		'-password'
 	);
 	return vehicle;
@@ -114,7 +114,10 @@ exports.deleteOneVehicle = async (id) => {
 };
 
 exports.fetchAVehicle = async (id) => {
-	let singleVehicle = await Vehicle.findById(id).populate();
+	let singleVehicle = await Vehicle.findById(id).populate(
+		'user vehicleName brand vehicleModel condition image location contact',
+		'-password'
+	);
 
 	return singleVehicle;
 };

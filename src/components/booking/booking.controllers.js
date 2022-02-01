@@ -7,7 +7,7 @@ const bookingError = require('./booking.error');
 const { sendResponse } = require('../../library/helpers/responseHelpers');
 const { isEmpty } = require('../../library/helpers/validationHelpers');
 
-exports.postCreatebooking = async (req, res) => {
+exports.postCreateBooking = async (req, res) => {
 	const errors = validationResult(req);
 
 	if (!errors.isEmpty()) {
@@ -16,7 +16,7 @@ exports.postCreatebooking = async (req, res) => {
 
 	const authorizedUser = req.currentUser;
 	const bookingData = req.body;
-	const savedBooking = await bookingService.createbooking(bookingData);
+	const savedBooking = await bookingService.createBooking(bookingData);
 
 	return res.status(200).send(
 		sendResponse({
@@ -98,8 +98,6 @@ exports.postDeleteBooking = async (req, res) => {
 		res.status(500).send(error);
 	}
 };
-
-
 
 exports.postGetABooking = async (req, res) => {
 	try {

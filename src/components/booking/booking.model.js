@@ -4,7 +4,8 @@ Schema = mongoose.Schema;
 const BookingSchema = new mongoose.Schema(
 	{
 		vehicle: {
-			type: String,
+			type: Schema.Types.ObjectId,
+			ref : 'vehicle',
 			required: true
 		},
 		status: {
