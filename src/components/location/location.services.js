@@ -10,7 +10,7 @@ const findAndPopulate = async (
 	findMode = 'one',
 	sortQuery = { _id: -1 }
 ) => {
-	const Location = await Location.find(query)
+	const location = await Location.find(query)
 		.select(selectQuery)
 		.populate({
 			path: path,
@@ -92,7 +92,7 @@ const updateLocation = async (query, LocationObj) => {
 exports.editLocation = async (query, LocationObj) => {
 	await updateLocation(query, LocationObj);
 
-	const Location = await findAndPopulate(
+	const location = await findAndPopulate(
 		{
 			...query
 		},
